@@ -3,8 +3,8 @@ import os
 
 from openai import OpenAI
 import streamlit as st
-client = OpenAI(api_key="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")
 
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 st.title("음성 번역기 (한국어 → 일본어 음성)")
 
@@ -51,4 +51,5 @@ if uploaded_file is not None:
 
     st.subheader("일본어 음성 출력")
     st.audio(speech_file_path, format="audio/mp3")
+
 
